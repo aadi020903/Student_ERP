@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Information</title>
+</head>
+<body>
+  <h1>Attendance Information</h1>
+
+  <% if (attendanceData.length === 0) { %>
+    <p>No attendance records available.</p>
+  <% } else { %>
+    <% attendanceData.forEach(student => { %>
+      <h2><%= student.name %> - <%= student.sid %></h2>
+      <p>Class: <%= student.currentClass %></p>
+      
+      <% if (student.teacherInfo) { %>
+        <h3>Class Teacher:</h3>
+        <p>Name: <%= student.teacherInfo.name %></p>
+        <p>Email: <%= student.teacherInfo.email %></p>
+        <p>Gender: <%= student.teacherInfo.gender %></p>
+        <p>Phone: <%= student.teacherInfo.phone %></p>
+        <p>Subject: <%= student.teacherInfo.subject %></p>
+      <% } %>
+
+      <h3>Attendance Record:</h3>
+      <% if (student.attendanceRecord.length === 0) { %>
+        <p>No attendance records available for this student.</p>
+      <% } else { %>
+        <ul>
+          <% student.attendanceRecord.forEach(record => { %>
+            <li>Date: <%= record.date.toDateString() %>, Status: <%= record.status %></li>
+          <% }); %>
+        </ul>
+      <% } %>
+      
+      <hr>
+    <% }); %>
+  <% } %>
+
+</body>
+</html>

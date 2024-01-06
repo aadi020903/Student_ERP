@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        
+      </li>
+      <form action="/api/dashboard" method="post">
+        <button type="submit" style="border: none; width: 100%; border-radius: 10px; margin-bottom: 10px;">
+          <a class="nav-link" >
+            <i class="bi bi-grid"></i>
+            <span> Main Dashboard</span>
+          </a>
+      </button>
+      </form>
+
+      <!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#attendance-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Attendance Manager</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="attendance-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <!-- <li>
+            <a class="nav-link collapsed" href="add_attendance">
+              <i class="bi bi-journal-text"></i><span>Add Attendance</span>
+            </a>
+
+          </li> -->
+          <li>
+            <a class="nav-link collapsed" href="view_attendance">
+              <i class="bi bi-journal-text"></i><span>View Attendance</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Student Manager</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="view_student">
+              <i class="bi bi-journal-text"></i><span>View Students</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link collapsed" href="student_register">
+              <i class="bi bi-journal-text"></i><span>Register Student</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#account-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Account Manager</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="account-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="/api/account_details">
+              <i class="bi bi-journal-text"></i><span>Account Details</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link collapsed" href="/api/fee_submit">
+              <i class="bi bi-journal-text"></i><span>Fees Deposit</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link collapsed" href="/api/add_fee_heads">
+              <i class="bi bi-journal-text"></i><span>Fees HeadUpdate</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#notifications-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bell"></i><span>Student Notifications</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="notifications-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="/api/student_notification">
+              <i class="bi bi-bell"></i><span>Send Notifications</span>
+            </a>
+          </li>
+        </ul>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#teacher-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Teacher Manager</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="teacher-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="add_teacher">
+              <i class="bi bi-journal-text"></i><span>Add Teacher</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link collapsed" href="view_teachers">
+              <i class="bi bi-journal-text"></i><span>View Teacher</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#libraries-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Library Manager</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="libraries-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="add_books">
+              <i class="bi bi-journal-text"></i><span>Add Books</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link collapsed" href="book_issue">
+              <i class="bi bi-journal-text"></i><span>Issue Book</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link collapsed" href="book_manager">
+              <i class="bi bi-journal-text"></i><span>View Book</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#Exam-Report-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Exam Report</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="Exam-Report-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" href="exam_report_submit">
+              <i class="bi bi-journal-text"></i><span>Send Report</span>
+            </a>
+          </li>
+       
+        </ul>
+      </li>
+
+       
+        
+
+       
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users_profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+      
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="register_admin">
+            <i class="bi bi-card-list"></i>
+            <span>Register</span>
+          </a>
+        </li>
+        <!-- End Register Page Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="login_admin">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Login</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="signout">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sign Out</span>
+          </a>
+        </li>
+        
+    </ul>
+  </aside>
+</body>
+
+</html>

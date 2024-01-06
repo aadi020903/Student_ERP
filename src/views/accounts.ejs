@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <pre>
+      <form action="feesctrl" method="get">
+        sid : <input type="text" name="sid" value=""> 
+        <input type="submit" value="Show">
+            <br>
+    <table border="2">
+    <tr>
+        <th >name</th>
+        <th >email</th>
+        <th >Eventfees</th>
+        <th >EventfeesStatus</th>
+        <th >BusFees</th>
+        <th >BusFeesStatus</th>
+        <th >HostelFees</th>
+        <th >HostelFeesStatus</th>
+        <th >totalFees</th>
+        <th >feesPaid</th>
+        <th >feesDue</th>
+    </tr>
+    <tr>
+        <td><input type="text" name="name" value="<%= data.name %>"></td>
+        <td><input type="text" name="email" value="<%= data.email %>"  ></td>
+        <td><input type="text" name="Eventfees" value="2000"></td>
+        <td><input type="text" name="EventfeesStatus" value="<%= data.eventstatus %> " ></td>
+        <td><input type="text" name="BusFees" value="6000"></td>
+        <td><input type="text" name="BusFeesStatus" value="<%= data.busstatus %> " ></td>
+        <td><input type="text" name="HostelFees" value="30000" ></td>
+        <td><input type="text" name="HostelFeesStatus" value="<%= data.hotelstatus %>"   ></td>
+        <td><input type="text" name="totalFees" value="<%= data.totalAmount %> " ></td>
+        <td><input type="text" name="feesPaid" value="<%= data.paidAmount %>"  ></td>
+        <td><input type="text" name="feesDue" value="<%= data.dueAmount %>"  ></td>
+    </tr>
+
+    </table>
+    </form>
+    </pre>
+  </body>
+</html>

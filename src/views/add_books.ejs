@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Add Books</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../public/assets/img/favicon.png" rel="icon">
+  <link href="../../public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../public/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../../public/assets/css/style.css" rel="stylesheet">
+  <script>
+    function validateISBNNumber() {
+        const ISBN_Number = document.getElementById('isbn').value;
+        if (ISBN_Number.length !== 13) {
+            alert('ISBN number must be 13 digits long.');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include("../../utils/header")%>
+  
+ 
+  <%- include("../../utils/sidebar")%>
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Add New Book</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_dashboard">Books</a></li>
+  
+          <li class="breadcrumb-item active">Add Books</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Please Fill Following Details..</h5>
+
+        <!-- Multi Columns Form -->
+        <form class="row g-3" onsubmit="return validateISBNNumber()" action="add_books_data" method="post">
+          <div class="col-md-6">
+            <label for="service_name" class="form-label">Book ID</label>
+            <input type="number" name="primarykey" class="form-control" placeholder="Primary Key" value="<%= NewprimaryKey %>" >
+          </div>
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">ISBN No.</label>
+            <input type="number" name="ISBN" class="form-control" placeholder="ISBN number" id="isbn">
+          </div>
+          
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Book Title</label>
+            <input type="text" name="booktitle" class="form-control" placeholder="Book Title">
+          </div>
+          
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Author Name</label>
+            <input type="text" name="authorname" class="form-control" placeholder="Author Name">
+          </div>
+          
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Genre</label>
+            <input type="text" name="genre" class="form-control" placeholder="Genre">
+          </div>
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Publish Year</label>
+            <input type="text" name="publishedyear" class="form-control" placeholder="Published Year">
+          </div>
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Totat Copies</label>
+            <input type="text" name="totalcopies" class="form-control" placeholder="Total Copies">
+          </div>
+          <div class="col-md-6">
+            <label for="serivce_type" class="form-label">Avialable Copies</label>
+            <input type="text" name="availablecopies" class="form-control" placeholder="Availble Copies">
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary ">Register Book</button>
+            <button type="reset" class="btn btn-secondary ">Reset</button>
+          </div>
+        </form><!-- End Multi Columns Form -->
+
+      </div>
+    </div>
+
+  </div>
+
+  </main><!-- End #main -->
+
+  <%- include("../../utils/footer")%>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../../public/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../../public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../public/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="../../public/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../../public/assets/vendor/quill/quill.min.js"></script>
+  <script src="../../public/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../../public/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../../public/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../../public/assets/js/main.js"></script>
+
+</body>
+
+</html>
